@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Tells SAMSUNG Devices to Respect the color-scheme -->
+    <meta name="color-scheme" content="light dark">
+
+    <title>God Is Able Hardware and Glass</title>
+
+    <!-- Favicon Declaration -->
+     <link rel="icon" type="image/png" href="images/White Logo no backround Yobundle.svg" sizes="32x32">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Header & Navigation (Added id="site-header" for JavaScript) -->
+    <header id="site-header">
+        <h1>God Is Able Hardware and Glass</h1>
+        <nav>
+            <!-- Clean JavaScript Hamburger Button -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Navigation Links List -->
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                
+                <!-- Dark or Light Theme Toggle Button -->
+                <li><button id="theme-toggle" aria-label="Toggle Theme">☀️</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. Main Content Wrapper -->
+    <main>
+
+        <!-- Hero Section -->
+        <section id="home">
+            <h2>Precision Hardware & Architectural Glass</h2>
+            <p>Elevating modern construction with high-grade profiles, secure locks, and flawless finishes.</p>
+            <a href="#products">
+                <button class="shimmer-button">Explore Catalog</button>
+            </a>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products">
+            <h2>Featured Solutions</h2>
+            
+            <article>
+                <h3>Structural Box Pipes</h3>
+                <p>High-tensile strength steel profiles built for robust industrial and commercial frameworks.</p>
+            </article>
+
+            <article>
+                <h3>Reflective Glass Sheets</h3>
+                <p>Advanced thermal-control glass engineered for striking aesthetics and energy efficiency.</p>
+            </article>
+
+            <article>
+                <h3>Heavy-Duty Gate Locks</h3>
+                <p>Uncompromising security mechanisms crafted for ultimate durability and peace of mind.</p>
+            </article>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="about-container">
+                <!-- Left Side: Story & Authority Text -->
+                 <div class="about-content">
+                    <h2>About Us</h2>
+                    <p>God Is Able Hardware and Glass has been a trusted supplier of premium construction materials for over a decade.</p>
+                    <p class="about-description">We specialize in delivering high-tensile structural profiles, secure architectural locks, and flawless glass solutions designed for modern industrial, commercial, and residential frameworks. Our commitment to uncompromised quality and reliability sets the benchmark in the construction industry.</p>
+                 </div>
+
+                 <!-- Right Side: Cinematic Image Card -->
+                  <article class="about-card">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="images/cold-formed-rectangular-hollow-sections.jpg">
+                        <source media="(min-width: 769px)" srcset="images/cold-formed-rectangular-hollow-sections.jpg">
+                        <img src="images/cold-formed-rectangular-hollow-sections.jpg" alt="Rectangular Hollow Sections and Architectural Materials" class="responsive-product-img">
+                    </picture>
+                  </article>
+            </div>
+
+        </section>  
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact-header">
+                <h2>Get in Touch</h2>
+                <p>For custom architectural quotes, bulk inquiries, or technical support, reach out to our team.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Left Side: Contact Information Cards -->
+                <div class="contact-info-card">
+                    <h3>Direct Inquiries</h3>
+                    <p>We are here to assist you with your industrial hardware and glass supply needs.</p>
+                    
+                    <address class="contact-details">
+                        <div class="contact-item">
+                            <span class="icon">✉️</span>
+                            <div>
+                                <strong>Email Us</strong>
+                                <a href="mailto:godisablehardware@gmail.com">godisablehardware@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="icon">📍</span>
+                            <div>
+                                <strong>Showroom & Depot</strong>
+                                <p>Kampala, Central Region, Uganda</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="icon">🕒</span>
+                            <div>
+                                <strong>Working Hours</strong>
+                                <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </address>
+                </div>
+
+                <!-- Right Side: Interactive Inquiry Form -->
+                <div class="contact-form-card">
+                    <h3>Send a Message</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="name@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Project Details / Quote Requirements</label>
+                            <textarea id="message" rows="4" placeholder="Describe the materials, box pipes, or glass sheets you need..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 3. Footer -->
+    <footer>
+        <p>&copy; <span id="current-year"></span> God Is Able Hardware & Glass. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Scripts -->
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            htmlElement.classList.add(savedTheme);
+            updateIcon(savedTheme);
+        } else {
+            htmlElement.classList.add('dark-theme');
+            updateIcon('dark-theme');
+        }
+
+        toggleButton.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark-theme')) {
+                htmlElement.classList.remove('dark-theme');
+                htmlElement.classList.add('light-theme');
+                localStorage.setItem('theme', 'light-theme');
+                updateIcon('light-theme');
+            } else {
+                htmlElement.classList.remove('light-theme');
+                htmlElement.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark-theme');
+                updateIcon('dark-theme');
+            }
+        });
+
+        function updateIcon(theme) {
+            toggleButton.textContent = theme === 'light-theme' ? '🌙' : '☀️';
+        }
+    </script>
+
+    <script>
+        const header = document.getElementById('site-header');
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        // Note: With the CSS checkbox trick, the menu handles itself, 
+        // but this script will also automatically close the drawer when a link is clicked.
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                header.classList.remove('menu-open');
+                const checkbox = document.getElementById('nav-toggle');
+                if(checkbox) checkbox.checked = false;
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

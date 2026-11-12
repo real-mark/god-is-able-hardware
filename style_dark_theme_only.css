@@ -1,0 +1,249 @@
+/* ==========================================
+   1. Design Tokens & Apple-Grade Variables
+   ========================================== */
+:root {
+    --bg-canvas: #000000;
+    --bg-surface: #161617;
+    --bg-glass: rgba(22, 22, 23, 0.8);
+    
+    --text-primary: #f5f5f7;
+    --text-secondary: #86868b;
+    --accent: #ff8e1e;               /* Apple Blue Accent */
+    --accent-hover: #4d157e;
+    
+    --border-subtle: rgba(255, 255, 255, 0.12);
+    --border-hover: rgba(255, 255, 255, 0.3);
+    
+    --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================
+   2. Sticky Frosted Glass Navigation (<header>)
+   ========================================== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 48px;
+    background-color: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+header h1 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.003em;
+    color: var(--text-primary);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    
+    /* 1. Add a smooth transition for color, transform, and font-weight */
+    transition: color 0.2s ease, transform 0.2s ease;
+    
+    /* 2. Optional trick to prevent layout jitter: reserves space for the bold state */
+    display: inline-block; 
+}
+
+nav a:hover {
+    color: var(--text-primary);
+    
+    /* 3. Apply your requested scale and bold weight */
+    transform: scale(1.04);
+    font-weight: 600;
+}
+
+/* ==========================================
+   3. Cinematic Hero Section (<section>)
+   ========================================== */
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 8rem 1.5rem 6rem 1.5rem;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+#home h2 {
+    font-size: clamp(3rem, 7vw, 56px);
+    font-weight: 600;
+    line-height: 1.07143;
+    letter-spacing: -0.005em;
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+}
+
+#home p {
+    font-size: clamp(1.2rem, 2.5vw, 24px);
+    line-height: 1.33337;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 700px;
+}
+
+/* Apple Pill-Style CTA Button */
+#home button {
+    background-color: var(--accent);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    border-radius: 980px;
+    cursor: pointer;
+    transition: all 0.3s var(--transition-smooth);
+}
+
+
+#home button:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px) scale(1.02);
+}
+    /* Combine both functions inside ONE transform property, separated by a space */
+
+/* ==========================================
+   4. Bento-Style Product Grid (<section>, <article>)
+   ========================================== */
+#products {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 8rem 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+#products > h2 {
+    grid-column: 1 / -1;
+    font-size: clamp(2rem, 4vw, 40px);
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: -0.003em;
+    margin-bottom: 1.5rem;
+}
+
+#products article {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: border-color 0.4s var(--transition-smooth), transform 0.4s var(--transition-smooth);
+}
+
+#products article:hover {
+    border-color: var(--border-hover);
+}
+
+#products article h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.009em;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+#products article p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.47059;
+}
+
+/* ==========================================
+   5. Minimalist Enterprise Footer (<footer>)
+   ========================================== */
+footer {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    border-top: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    line-height: 1.33333;
+    text-align: left;
+}
+
+/* ==========================================
+   6. Responsive Adaptations
+   ========================================== */
+@media (max-width: 768px) {
+    header {
+        padding: 0 1rem;
+    }
+
+    nav ul {
+        gap: 1.25rem;
+    }
+
+    #home {
+        padding: 5rem 1rem 4rem 1rem;
+    }
+
+    #products {
+        padding: 2rem 1rem 5rem 1rem;
+    }
+}
+
+/* ==========================================
+   Shimmer Animation Effect
+   ========================================== */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.shimmer-button {
+    /* Multi-stop gradient that creates the light highlight */
+    background: linear-gradient(90deg, #2997ff 0%, #93c5fd 50%, #2997ff 100%);
+    background-size: 200% 100%;
+    animation: shimmer 4s infinite linear;
+    /* Hardware acceleration hint for zero lag */
+    will-change: background-position;
+}
