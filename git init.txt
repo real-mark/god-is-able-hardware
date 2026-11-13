@@ -1,0 +1,8 @@
+git init
+git add .
+git config user.name "Mukundane Mark"
+git config user.email "markmukundane.com"
+git commit -m "Initial enterprise site commit with responsive layout and favicon"
+git branch -M main
+git remote add origin https://github.com/real-mark/god-is-able-hardware.git
+git push -u origin main

@@ -3,6 +3,7 @@
    ========================================== */
 :root {
     /* Default Dark Theme Tokens */
+    color-scheme: dark light; /* Tells the engine dark is default, light is supported */
     --bg-canvas: #000000;
     --bg-surface: #161617;
     --bg-glass: rgba(22, 22, 23, 0.8);
